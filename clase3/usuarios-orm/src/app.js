@@ -19,7 +19,7 @@ app.set("views", path.join(__dirname, "views"));
 // Rutas
 app.use("/usuarios", usuarioRoutes);
 app.use("/", (req, res) => {
-  res.send("Bien venido a la página principal");
+  res.send("Bienvenido a la página principal!!");
 });
 
 const PORT = process.env.PORT || 3000;

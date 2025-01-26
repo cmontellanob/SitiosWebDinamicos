@@ -3,11 +3,10 @@ const router = express.Router();
 const { getRepository } = require("typeorm");
 const bcrypt = require("bcrypt");
 const { Usuario } = require("../entity/Usuario");
+const controlador = require("../controller/usuarioController");
 
 router.get("/", async (req, res) => {
- 
-  const usuarios = await getRepository(Usuario).find();
-  res.render("usuarios/index", { usuarios });
+ controlador.obtenerUsuarios(req, res);
 });
 
 // Página para crear un usuario

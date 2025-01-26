@@ -4,8 +4,10 @@ const { Usuario } = require("../entity/Usuario");
 
 // Obtener todos los usuarios
 const obtenerUsuarios = async (req, res) => {
-  const usuarios = await getRepository(Usuario).find();
-  res.json(usuarios);
+  // const usuarios = await getRepository(Usuario).find();
+  // res.json(usuarios);
+    const usuarios = await getRepository(Usuario).find();
+    res.render("usuarios/index", { usuarios });
 };
 
 // Crear un nuevo usuario
