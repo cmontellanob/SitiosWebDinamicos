@@ -20,7 +20,15 @@ mongoose.connect('mongodb://127.0.0.1:27017/usuarios', {
 
 // Rutas
 app.get('/', async (req, res) => {
-    const users = await User.find();
+    const consulta = req.query.nombre;
+    
+    
+    if (consulta) {
+        
+        const users = await User.find({ nombre: consulta} );
+        return res.render('index', { users });
+    }
+    const users = await User.find( );
     res.render('index', { users });
 });
 
